@@ -9,6 +9,7 @@ import TimeSeriesAreaChart from "../../components/TimeSeriesAreaChart";
 import TimeSeriesBarChart from "../../components/TimeSeriesBarChart";
 import TimeSeriesLineChart from "../../components/TimeSeriesLineChart";
 import ProgressBar from "../../components/ProgressBar";
+import Funnel from "../../components/Funnel";
 import TimeSeriesWaterfallChart from "../../components/TimeSeriesWaterfallChart";
 
 const propTypes = {
@@ -23,6 +24,7 @@ const propTypes = {
     "timeseries/line",
     "timeseries/waterfall",
     "progress",
+    "funnel",
   ]).isRequired,
   options: PropTypes.object.isRequired,
 };
@@ -49,6 +51,8 @@ const StaticChart = ({ type, options }) => {
       return <TimeSeriesWaterfallChart {...options} />;
     case "progress":
       return <ProgressBar {...options} />;
+    case "funnel":
+      return <Funnel {...options} />;
   }
 };
 
